@@ -1,0 +1,1114 @@
+/*
+ * Author: 99SQUIRRELS
+ */
+
+ @import "fonts.css";
+
+ @font-face {
+  font-family: 'WhitneyMed';
+  src: url('fonts/OpenType/Whitney-Medium-ProGkCy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'WhitneyBook';
+  src: url('fonts/OpenType/Whitney-Book-ProGkCy.otf') format('opentype');
+}
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html,
+   button,
+   input,
+   select,
+   textarea {
+    color: #222;
+  }
+
+  body {
+    font-size: 1em;
+    line-height: 1.4;
+  }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+ ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+ hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+ img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+ fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+ textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+   .chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+  }
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+   body{
+    margin:0;
+    padding:0;
+  }
+
+  header{
+    background-image:url(../images/dots.png);
+    height:60px;
+    width:100%;
+    border-top: 5px solid #45B984;
+  }
+
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
+
+   #popup{
+    width:390px;
+    height:310px;
+    background-color:#45B984;
+    color:white;
+    font-family:"WhitneyBook";
+    position: absolute;
+    left:50%;
+    margin-left:-195px;
+    top:-320px;
+    z-index: 8;
+    transition:top 250ms linear;
+
+    &.slide-out{
+      top:0;
+    }
+
+    .oggl-description{
+      width:300px;
+      margin:0 auto 20px;
+      text-align: center;
+      font-size:18px;
+      margin-top:87px;
+    }
+
+    .legal{
+      font-size:18px;
+      text-align:center;
+      margin-bottom:0;
+      line-height:18px;
+
+      a{
+        font-size:12px;
+        clear:both;
+        color:white;
+        line-height:10px;
+      }
+    }
+
+    .store-btns{
+      text-align: center;
+      a{
+        display: inline-block;
+        transition:all 100ms linear;
+
+        &:hover{
+        }
+        &.btn-apple-store{
+          background-image: url(../images/apple.png);
+          background-size:161px 46px;
+          width:161px;
+          height:46px;
+        }
+        &.btn-windows-store{
+          background-image: url(../images/windows.png);
+          background-size:161px 46px;
+          width:161px;
+          height:46px;
+        }
+      }
+    }
+
+    .legal{
+
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+
+/* ==========================================================================
+   index page
+   ========================================================================== */
+
+   #logo{
+    background-image:url(../images/logo_icn.png);
+    width:113px;
+    height:60px;
+    margin:0 auto;
+    z-index: 9;
+    position: absolute;
+    left:50%;
+    margin-left:-57px;
+    background-size:113px 60px;
+  }
+
+  .container{
+    text-align: center;
+    color:#99917B;
+    font-family:"WhitneyBook";
+
+    .profile{
+      clear:both;
+
+      .avatars{
+        width:300px;
+        margin:0 auto;
+        clear:both;
+        margin-top:50px;
+
+        > div{
+          display: inline-block;
+          width:100px;
+          height:110px;
+          text-transform: uppercase;
+          font-size: 14px;
+          float:left;
+        }
+
+        .followers{
+          text-align: center;
+
+          .followers-count{
+            text-align: center;
+            display: inline-block;
+            width:50px;
+            height:50px;
+            line-height: 54px;
+            border-radius:50px;
+            color:white;
+            background-color:#99917B;
+            font-size:24px;
+            margin-top:30px;
+            margin-bottom:10px;
+            font-family:"WhitneyMed";
+          }
+        }
+
+        .main-avatar{
+          background-image:url(http://www.biography.com/imported/images/Biography/Images/Profiles/M/Nelson-Mandela-9397017-1-402.jpg);
+          width:90px;
+          height:90px;
+          border-radius:90px;
+          border: 5px solid #45B984;
+          background-size:90px 90px;
+          margin:0 0px;
+          padding:0;
+          display: inline-block;
+          float:left;
+        }
+
+        .member,.contributor{
+          text-align: center;
+          color:#E9594D;
+          .member-icon,.contributor-icon{
+            margin-bottom:5px;
+            margin-top:30px;
+            display: inline-block;
+            background-image:url(../images/member_icn.png);
+            width:50px;
+            border-radius:50px;
+            background-size:34px 28px;
+            height:50px;
+            background-color:#E9594D;
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+          display: none;
+        }
+        .contributor{
+          color:#99917B;
+          .contributor-icon{
+            background-image:url(../images/contributor_icn.png);
+            background-size:29px 23px;
+            background-color:#99917B;
+          }
+          display: block;
+        }
+      }
+      .fullname{
+        font-family:"WhitneyMed";
+        clear:both;
+        font-size:24px;
+        color:#585A5B;
+        padding-top:10px;
+        line-height: 30px;
+      }
+      .oggl-handle{
+        font-family:"WhitneyBook";
+        color:#585A5B;
+      }
+    }
+
+    .description{
+      width:400px;
+      margin: 15px auto;
+      font-size:18px;
+    }
+
+    #photo_nav_wrapper{
+      width:100%;
+      height:40px;
+      margin:45px auto 0;
+      position: relative;
+
+      #photo_nav{
+        margin:0px auto;
+        height:40px;
+        width:650px;
+        padding:0;
+        li:first-child{
+          border-left:0;
+        }
+        li:nth-child(2){
+          width:216px;
+        }
+        li{
+          width:215px;
+          border-left:2px solid white;
+          background-color: #F0EDE1;
+          font-family:"WhitneyMed";
+          text-align: center;
+          display: inline-block;
+          list-style: none;
+          margin:0;
+          float:left;
+          height:40px;
+          line-height: 40px;
+          transition:all 100ms linear;
+          cursor: pointer;
+
+          &.selected{
+            background-color:#45B984;
+            color:white;
+            &:hover{
+              background-color:#45B984;
+            }
+          }
+          &:hover{
+            background-color: #D0EDE0;
+          // background-color: #dbd9d2;
+        }
+      }
+    }
+
+    .layout-toggles{
+      position: absolute;
+      right:35px;
+      top:0;
+      width: 80px;
+
+
+      .btn-grid,.btn-column{
+        width:26px;
+        background-size:26px 26px;
+        height:26px;
+        float:right;
+        margin:7px 5px;
+        background-image:url(../images/grid_icn_on.png);
+        transition:all 100ms linear;
+        opacity: 0.35;
+        &:hover{
+          opacity:0.8;
+        }
+        &.selected{
+          opacity:1;
+        }
+      }
+      .btn-column{
+        background-image:url(../images/column_icn_on.png);
+      }
+    }
+  }
+
+  #gallery{
+    clear:both;
+    padding-top:25px;
+    width:100%;
+    font-size:0px;
+
+    > div {
+      display: none;
+    }
+
+    &.category-my-collection{
+      #my_collection{
+        display: block;
+      }
+    }
+    &.category-curated{
+      #curated{
+        display: block;
+      }
+    }
+    &.category-captured{
+      #captured{
+        display: block;
+      }
+    }
+
+    > div > a{
+      width:300px;
+      height:300px;
+      display: inline-block;
+      background-size:cover;
+      margin:25px 25px 25px 25px;
+      -webkit-transition: all 400ms ease-out 0ms;
+      transform: translateY(800px);
+      opacity: 0;
+      &:hover{
+        transition: all 100ms ease-out 0ms;
+        opacity: 0.8!important;
+      }
+    }
+
+    &.column{
+      > div > a{
+        width:650px;
+        height:650px;
+        display: inline-block;
+        clear:both;
+        background-size:cover;
+        margin: 20px auto 50px;
+        display: list-item;
+        list-style: none;
+      }
+    }
+
+    &.slide-up{
+      > div > a{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @for $i from 1 through 28 {
+      #my_collection > a:nth-child(#{$i}) {
+        background-image:url(../images/photo#{$i % 9 + 1}.jpg);
+        transition-delay:$i * 50ms;
+      }
+    }
+    @for $i from 1 through 28 {
+      #captured > a:nth-child(#{$i}) {
+        background-image:url(../images/photo#{$i % 9 + 9}.jpg);
+        transition-delay:$i * 50ms;
+      }
+    }
+    @for $i from 1 through 28 {
+      #curated > a:nth-child(#{$i}) {
+        background-image:url(../images/photo#{$i % 9 + 18}.jpg);
+        transition-delay:$i * 50ms;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Photo page
+   ========================================================================== */
+
+   .container.photo{
+    text-align: center;
+
+    .profile:hover{
+      cursor: pointer;
+      .avatars .main-avatar{
+        opacity: 0.8;
+      }
+      .fullname,.oggl-handle {
+        text-decoration: underline;
+      }
+    }
+
+    .avatars{
+      .followers,
+      .contributor,
+      .member{
+        opacity: 0;
+        transition:opacity 200ms linear;
+      }
+      .main-avatar{
+        transition:opacity 200ms linear;
+      }
+    }
+
+    .photo-wrapper{
+      margin-top:45px;
+      margin-bottom:0px;
+      position: relative;
+      #main_photo{
+        width:650px;
+      }
+
+      .btn-prev, .btn-next{
+        position: absolute;
+        background-image:url(../images/arrow_l_100.png);
+        width:42.5px;
+        height:50px;
+        margin-top:-25px;
+        top:50%;
+        left:10%;
+        background-size:42px 50px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        &:hover{
+          transition:opacity 100ms linear;
+          opacity: 0.6;
+        }
+      }
+      .btn-next{
+        background-image:url(../images/arrow_r_100.png);
+        right:10%;
+        left:auto;
+        width:42px;
+        background-size:42px 50px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .description{
+      width:650px;
+      display: inline-block;
+      font-size:20px;
+    }
+
+    .separator{
+      background-color:#99917B;
+      height:2px;
+      width:650px;
+      direction: inline-block;
+      margin: 0 auto;
+      opacity: 0.35;
+    }
+
+    .controls{
+      margin-bottom:45px;
+      a{
+        width:30px;
+        height:29px;
+        display: inline-block;
+        background-size:30px 29px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color:#99917B;
+        font-size:10px;
+        padding-top:35px;
+        margin:0 10px;
+        transition:all 100ms linear;
+
+        &:hover{
+          opacity: 0.5;
+        }
+
+        &.btn-gear{
+          background-image:url(../images/gear.png);
+        background-size:42px 31px;
+        width:42px;
+        height:31px;
+        }
+        &.btn-social{
+          background-image:url(../images/social_icn.png);
+        }
+      }
+    }
+
+    #photo-details{
+      padding-top:25px;
+      padding-bottom:50px;
+
+      &.show-social-btns{
+        .social-btns{
+          display: block;
+        }
+        .photo-description{
+          display: none;
+        }
+      }
+
+      &.show-film-lens{
+        .film-lens{
+          display: block;
+          .separator{
+            display: none;
+          }
+        }
+        .photo-description{
+          display: none;
+        }
+      }
+
+
+      .film-lens{
+        display: none;
+        width:650px;
+        margin:0 auto;
+        text-align: center;
+        margin-bottom:18px;
+
+        > div {
+          display: inline-block;
+        }
+
+        .plus{
+          line-height: 0px;
+          font-size:18px;
+          vertical-align:middle;
+          height:18px;
+          margin: 0 10px 0 5px ;
+        }
+        .film-icn,
+        .lens-icn{
+          background-size:30px 29px;
+          width:30px;
+          background-position: center center;
+          height:29px;
+          background-repeat: no-repeat;
+          display: inline-block;
+        }
+
+        .lens-icn{
+          background-image:url(../images/lens_icn.png);
+        }
+
+        .film-icn{
+          background-image:url(../images/film_icn.png);
+        }
+
+        .lens-name,
+        .film-name{
+          vertical-align:middle;
+          line-height: 0px;
+          margin: 0 5px;
+          display: inline-block;
+          font-size:18px;
+          height:18px;
+        }
+
+        .film-name{
+        }
+
+      }
+
+      .photo-description{
+        width:400px;
+        margin: 15px auto 10px;
+        font-size:18px;
+      }
+
+      .separator{
+        margin-bottom:20px;
+        margin-top:15px;
+      }
+
+      .social-btns{
+        display: none;
+        a{
+          width:34px;
+          height:34px;
+          background-size:34px 34px;
+          display: inline-block;
+          margin: 0 8px;
+          transition:all 100ms linear;
+
+          &:hover{
+            opacity: 0.5;
+          }
+
+          &.btn-facebook{
+            background-image:url(../images/soc_fb.png);
+          }
+          &.btn-twitter{
+            background-image:url(../images/soc_twit.png);
+          }
+          &.btn-tumblr{
+            background-image:url(../images/soc_tum.png);
+          }
+          &.btn-pinterest{
+            background-image:url(../images/soc_pin.png);
+          }
+        }
+      }
+
+
+    }
+  }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+ .ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+  }
+
+  .ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+ .hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+ .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+ .invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+ .clearfix:before,
+ .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+ .clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+   @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+  }
+
+  @media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+  }
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (max-width : 1024px) {
+/* Styles */
+.container{
+  #gallery.column,
+  #gallery{
+    padding-top:39px;
+
+    > div > a{
+      width:202px;
+      height:202px;
+      margin:11px;
+      display: inline-block;
+    }
+  }
+  #photo-details,
+  &.photo #photo-details{
+    .film-lens{
+      display: block;
+    }
+    .social-btns{
+      display: block;
+    }
+    .controls,
+    .desc-separator{
+      display: none;
+    }
+    .bottom-separator{
+      margin-bottom:0;
+    }
+  }
+}
+.layout-toggles{
+  display: none;
+}
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (max-width : 700px) {
+/* Styles */
+
+
+header{
+  height:40px;
+
+  #logo{
+    width:75px;
+    height:40px;
+    margin-left:-37px;
+    background-size:75px 40px;
+  }
+
+}
+
+
+#popup{
+  width:320px;
+  height:267px;
+  left:50%;
+  margin-left:-160px;
+  top:-270px;
+  z-index: 8;
+
+  &.slide-out{
+    top:0;
+  }
+
+  .oggl-description{
+    width:260px;
+    margin:0 auto 20px;
+    font-size:15px;
+    margin-top:66px;
+  }
+
+  .legal{
+    font-size:18px;
+    text-align:center;
+    margin-bottom:0;
+    font-size:15px;
+
+    a{
+      font-size:12px;
+      clear:both;
+      color:white;
+      line-height:10px;
+    }
+  }
+
+  .store-btns{
+    text-align: center;
+    a{
+      margin: 0 2px;
+      display: inline-block;
+      transition:all 100ms linear;
+
+      &:hover{
+      }
+      &.btn-apple-store{
+        background-image: url(../images/apple.png);
+        background-size:130px 37px;
+        width:130px;
+        height:37px;
+      }
+      &.btn-windows-store{
+        background-image: url(../images/windows.png);
+        background-size:130px 37px;
+        width:130px;
+        height:37px;
+      }
+    }
+  }
+
+  .legal{
+
+    a{
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.container.photo{
+  .avatars{
+    display: none;
+  }
+  .photo-wrapper{
+    margin-top:20px;
+    margin-bottom:00px;
+    #main_photo{
+      width:300px;
+    }
+  }
+  .description{
+    font-size:14px;
+    width:300px;
+    border-bottom:none;
+  }
+}
+.social-btns{
+  width:300px;
+  margin:0 auto;
+  a{
+    width:50px;
+    height:50px;
+    display: inline-block;
+  }
+}
+.container{
+  #gallery.column,
+  #gallery{
+    padding-top:20px;
+
+    > div > a{
+      width:94px;
+      height:94px;
+      margin:4.5px;
+    }
+  }
+  .description{
+    width:300px;
+    font-size:14px;
+  }
+  .profile{
+    .fullname{
+      padding-top:20px;
+      clear:none;
+      display: inline-block;
+    }
+    .oggl-handle{
+      display: inline-block;
+      margin-bottom:00px;
+    }
+    .avatars{
+      margin-top:25px;
+      margin-bottom:10px;
+    }
+  }
+  #photo_nav_wrapper{
+    margin:10px auto 0;
+    #photo_nav{
+      margin:20px auto;
+      width:300px;
+      li{
+        width:98px;
+        font-size:12px;
+      }
+      li:nth-child(2){
+        width:100px;
+      }
+      .pipe, .count{
+        display: none;
+      }
+    }
+  }
+  #photo-details,
+  &.photo #photo-details{
+    .photo-description{
+      width:280px;
+    }
+    .film-lens{
+      display: block;
+      width:300px;
+    }
+    .social-btns{
+      display: block;
+    }
+    .separator{
+      width:300px;
+    }
+  }
+
+  .photo-wrapper{
+    .btn-prev, .btn-next {
+      width: 21px!important;
+      height: 25px!important;
+      margin-top: -12px!important;
+      background-size: 21px 25px!important;
+    }
+  }
+}
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+   @media print {
+    * {
+      background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+
+      a,
+      a:visited {
+        text-decoration: underline;
+      }
+
+      a[href]:after {
+        content: " (" attr(href) ")";
+      }
+
+      abbr[title]:after {
+        content: " (" attr(title) ")";
+      }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+     .ir a:after,
+     a[href^="javascript:"]:after,
+     a[href^="#"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+      }
+
+      tr,
+      img {
+        page-break-inside: avoid;
+      }
+
+      img {
+        max-width: 100% !important;
+      }
+
+      @page {
+        margin: 0.5cm;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3 {
+        page-break-after: avoid;
+      }
+    }

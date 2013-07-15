@@ -1,0 +1,10 @@
+
+@font-face {
+  font-family: 'WhitneyMed';
+src: url('fonts/OpenType/Whitney-Medium-ProGkCy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'WhitneyBook';
+src: url('fonts/OpenType/Whitney-Book-ProGkCy.otf') format('opentype');
+}
