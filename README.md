@@ -6,7 +6,7 @@ http://www.jonathanmatthey.com/hipsta
 
 Project built using yeoman on grunt js
 
-  grunt server
+    grunt server
 
 To make change to the code base, install yeoman
 
