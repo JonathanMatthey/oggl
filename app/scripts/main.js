@@ -1,10 +1,23 @@
 require.config({
+    baseUrl: '../scripts',
     paths: {
-        jquery: '../bower_components/jquery/jquery'
+        'jquery': '../bower_components/jquery/jquery',
+        'jquery.lazyload': '../bower_components/jquery.lazyload/jquery.lazyload'
+
+    },
+    shim: {
+      'jquery.lazyload': {
+          //These script dependencies should be loaded before loading
+          //backbone.js
+          deps: ['jquery'],
+          //Once loaded, use the global 'Backbone' as the
+          //module value.
+          exports: 'Lazyload'
+      }
     }
 });
 
-require(['app', 'jquery'], function (app, $) {
+require(['jquery', 'app', 'jquery.lazyload'], function ($, app) {
   'use strict';
   // use app here
 
@@ -41,20 +54,20 @@ require(['app', 'jquery'], function (app, $) {
     $("#popup").removeClass("slide-out");
   });
 
-  $("#photo-details").mouseleave(function(event){
-    event.preventDefault();
-    $("#photo-details").removeClass('show-social-btns show-film-lens');
-  });
+  // $("#photo_details").mouseleave(function(event){
+  //   event.preventDefault();
+  //   $("#photo_details").removeClass('show-social-btns show-film-lens');
+  // });
 
-  $(".btn-social").on(touchEvent, function(event){
-    event.preventDefault();
-    $("#photo-details").removeClass('show-film-lens').toggleClass('show-social-btns');
-  });
+  // $(".btn-social").on(touchEvent, function(event){
+  //   event.preventDefault();
+  //   $("#photo_details").removeClass('show-film-lens').toggleClass('show-social-btns');
+  // });
 
-  $(".btn-gear").on(touchEvent, function(event){
-    event.preventDefault();
-    $("#photo-details").removeClass('show-social-btns').toggleClass('show-film-lens');
-  });
+  // $(".btn-gear").on(touchEvent, function(event){
+  //   event.preventDefault();
+  //   $("#photo_details").removeClass('show-social-btns').toggleClass('show-film-lens');
+  // });
 
   $(".layout-toggles a.btn-grid").on(touchEvent, function(event){
     event.preventDefault();
@@ -70,24 +83,30 @@ require(['app', 'jquery'], function (app, $) {
     $("#gallery").removeClass('grid').addClass('column');
   });
 
-  $("#gallery a").on(touchEvent, function(event){
-    event.preventDefault();
-    var targetHref = $(event.currentTarget).attr('href');
-    console.log(window.location.href + targetHref + " #content");
-    $('.container').addClass('photo');
-    $("#content").fadeOut(300, function(){
-        $("#content").load(window.location.href + targetHref + " #content", function(data){
-          window.history.pushState("photo", "Oggle - Photo Details", "/photo.html");
-          $("#content").fadeIn(300, function(){
-          });
-        });
-    });
+  //
+  // AJAX load photo page
+  //
+  // $("#gallery a").on('click', function(event){
+  //   event.preventDefault();
+  //   var targetHref = $(event.currentTarget).attr('href');
+  //   $('.container').addClass('photo');
+  //   $("#content").fadeOut(300, function(){
+  //       $("#content").load(window.location.href + targetHref + " #content", function(data){
+  //         window.history.pushState("photo", "Oggle - Photo Details", "/photo.html");
+  //         $("#content").fadeIn(300, function(){
+  //         });
+  //       });
+  //   });
+  // });
+
+  $(".photo-wrapper").addClass('fade-arrows-out');
+  $(".photo-wrapper").on(touchEvent, function(event){
+    $(".photo-wrapper").removeClass('fade-arrows-out');
+    setTimeout(function(){
+      $(".photo-wrapper").addClass('fade-arrows-out');
+    },200);
   });
 
- //   function processAjaxData(response, urlPath){
- //     document.getElementById("content").innerHTML = response.html;
- //     document.title = response.pageTitle;
- //     window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
- // }
+  $("img.lazy").lazyload({ threshold : 100 });
 
 });

@@ -381,7 +381,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
+        // 'rev',
         'usemin'
     ]);
 

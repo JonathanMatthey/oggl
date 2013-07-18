@@ -293,6 +293,8 @@
         color:#585A5B;
         padding-top:10px;
         line-height: 30px;
+        display: block;
+
       }
       .oggl-handle{
         font-family:"WhitneyBook";
@@ -317,6 +319,11 @@
         height:40px;
         width:650px;
         padding:0;
+
+        .count{
+          font-family:"WhitneyBook";
+        }
+
         li:first-child{
           border-left:0;
         }
@@ -324,6 +331,7 @@
           width:216px;
         }
         li{
+          font-size:18px;
           width:215px;
           border-left:2px solid white;
           background-color: #F0EDE1;
@@ -408,17 +416,38 @@
     }
 
     > div > a{
+      position: relative;
+
+      .star{
+        display: none;
+      }
+
+      &.curated .star{
+        display: block;
+        background-image: url(../images/web_curated_icn.png);
+        width:45px;
+        height:45px;
+        background-size:45px 45px;
+        position: absolute;
+        top:-2px;
+        right:-2px;
+      }
+
+      img{
+        width:300px;
+        height:300px;
+      }
+
       width:300px;
       height:300px;
       display: inline-block;
       background-size:cover;
       margin:25px 25px 25px 25px;
-      -webkit-transition: all 400ms ease-out 0ms;
+      transition: transform 400ms ease-out 0ms, opacity 100ms linear 0ms;
       transform: translateY(800px);
       opacity: 0;
       &:hover{
-        transition: all 100ms ease-out 0ms;
-        opacity: 0.8!important;
+        opacity: 0.6!important;
       }
     }
 
@@ -426,6 +455,10 @@
       > div > a{
         width:650px;
         height:650px;
+        img{
+          width:650px;
+          height:650px;
+        }
         display: inline-block;
         clear:both;
         background-size:cover;
@@ -444,20 +477,20 @@
 
     @for $i from 1 through 28 {
       #my_collection > a:nth-child(#{$i}) {
-        background-image:url(../images/photo#{$i % 9 + 1}.jpg);
-        transition-delay:$i * 50ms;
+        // background-image:url(../images/photo#{$i % 9 + 1}.jpg);
+        transition-delay:$i * 50ms,0ms;
       }
     }
     @for $i from 1 through 28 {
       #captured > a:nth-child(#{$i}) {
-        background-image:url(../images/photo#{$i % 9 + 9}.jpg);
-        transition-delay:$i * 50ms;
+        // background-image:url(../images/photo#{$i % 9 + 9}.jpg);
+        transition-delay:$i * 50ms,0ms;
       }
     }
     @for $i from 1 through 28 {
       #curated > a:nth-child(#{$i}) {
-        background-image:url(../images/photo#{$i % 9 + 18}.jpg);
-        transition-delay:$i * 50ms;
+        // background-image:url(../images/photo#{$i % 9 + 18}.jpg);
+        transition-delay:$i * 50ms,0ms;
       }
     }
   }
@@ -467,9 +500,18 @@
    Photo page
    ========================================================================== */
 
-   .container.photo{
+  .container.photo.curated{
+    .captured-by{
+      display: block!important;
+    }
+  }
+
+  .container.photo{
     text-align: center;
 
+    .profile{
+      padding-top:35px;
+    }
     .profile:hover{
       cursor: pointer;
       .avatars .main-avatar{
@@ -496,6 +538,7 @@
       margin-top:45px;
       margin-bottom:0px;
       position: relative;
+
       #main_photo{
         width:650px;
       }
@@ -511,8 +554,9 @@
         background-size:42px 50px;
         background-repeat: no-repeat;
         cursor: pointer;
+        opacity: 1;
+        transition:opacity 100ms linear;
         &:hover{
-          transition:opacity 100ms linear;
           opacity: 0.6;
         }
       }
@@ -535,7 +579,7 @@
     .separator{
       background-color:#99917B;
       height:2px;
-      width:650px;
+      width:350px;
       direction: inline-block;
       margin: 0 auto;
       opacity: 0.35;
@@ -564,9 +608,9 @@
 
         &.btn-gear{
           background-image:url(../images/gear.png);
-        background-size:42px 31px;
-        width:42px;
-        height:31px;
+          background-size:42px 31px;
+          width:42px;
+          height:31px;
         }
         &.btn-social{
           background-image:url(../images/social_icn.png);
@@ -574,38 +618,61 @@
       }
     }
 
-    #photo-details{
+    #photo_details{
       padding-top:25px;
       padding-bottom:50px;
 
-      &.show-social-btns{
-        .social-btns{
-          display: block;
-        }
-        .photo-description{
-          display: none;
-        }
+      // &.show-social-btns{
+      //   .social-btns{
+      //     display: block;
+      //   }
+      //   .photo-description{
+      //     display: none;
+      //   }
+      // }
+      // &.show-film-lens{
+      //   .film-lens{
+      //     display: block;
+      //     .separator{
+      //       display: none;
+      //     }
+      //   }
+      //   .photo-description{
+      //     display: none;
+      //   }
+      // }
+
+
+      .location{
+        font-weight: bold;
+        font-family: "WhitneyBook";
+        font-size:15px;
       }
 
-      &.show-film-lens{
-        .film-lens{
-          display: block;
-          .separator{
-            display: none;
-          }
-        }
-        .photo-description{
-          display: none;
+      .captured-by{
+        color:#4BB785;
+        font-weight:bold;
+        display: none;
+        font-size:18px;
+        font-family: "WhitneyBook";
+
+        .oggl-handle{
+          color:#4BB785!important;
+          text-decoration:underline;
         }
       }
-
 
       .film-lens{
-        display: none;
-        width:650px;
+        width:350px;
         margin:0 auto;
+        padding-top:8px;
+
         text-align: center;
-        margin-bottom:18px;
+        // margin-bottom:18px;
+
+        .top-separator{
+          display: none;
+        }
 
         > div {
           display: inline-block;
@@ -615,15 +682,16 @@
           line-height: 0px;
           font-size:18px;
           vertical-align:middle;
-          height:18px;
+          height:10px;
           margin: 0 10px 0 5px ;
         }
+
         .film-icn,
         .lens-icn{
-          background-size:30px 29px;
-          width:30px;
+          background-size:18px 18px;
+          width:18px;
           background-position: center center;
-          height:29px;
+          height:18px;
           background-repeat: no-repeat;
           display: inline-block;
         }
@@ -643,7 +711,7 @@
           margin: 0 5px;
           display: inline-block;
           font-size:18px;
-          height:18px;
+          height:10px;
         }
 
         .film-name{
@@ -652,9 +720,11 @@
       }
 
       .photo-description{
-        width:400px;
-        margin: 15px auto 10px;
+        width:350px;
+        margin: 0px auto 10px;
+        padding-top:15px;
         font-size:18px;
+        font-family: "WhitneyBook";
       }
 
       .separator{
@@ -663,7 +733,6 @@
       }
 
       .social-btns{
-        display: none;
         a{
           width:34px;
           height:34px;
@@ -819,38 +888,71 @@
 @media only screen
 and (max-width : 1024px) {
 /* Styles */
-.container{
-  #gallery.column,
-  #gallery{
-    padding-top:39px;
+  .container{
+    #gallery.column,
+    #gallery{
+      padding-top:39px;
 
-    > div > a{
-      width:202px;
-      height:202px;
-      margin:11px;
-      display: inline-block;
+      > div > a{
+        width:202px;
+        height:202px;
+        margin:11px;
+        display: inline-block;
+        img{
+          width:202px;
+          height:202px;
+        }
+        .star{
+          display: none;
+        }
+        &.curated .star{
+          width:36px;
+          height:36px;
+          background-size:36px 36px;
+          top:-10px;
+          right:-10px;
+        }
+      }
+    }
+    #photo_details,
+    &.photo #photo_details{
+      .film-lens{
+        display: block;
+      }
+      .social-btns{
+        display: block;
+        padding-top:20px;
+      }
+      .controls,
+      .desc-separator{
+        display: none;
+      }
+      .bottom-separator{
+        margin-bottom:0;
+        margin-top:18px;
+      }
+    }
+    .photo-wrapper{
+      &.fade-arrows-out{
+        .btn-prev, .btn-next{
+          transition:opacity 200ms linear 2000ms;
+          opacity: 0;
+        }
+      }
+    }
+
+  }
+  .layout-toggles{
+    display: none;
+  }
+  .container.photo{
+    .photo-wrapper{
+      margin-top:45px;
+    }
+    .profile{
+      padding-top:35px;
     }
   }
-  #photo-details,
-  &.photo #photo-details{
-    .film-lens{
-      display: block;
-    }
-    .social-btns{
-      display: block;
-    }
-    .controls,
-    .desc-separator{
-      display: none;
-    }
-    .bottom-separator{
-      margin-bottom:0;
-    }
-  }
-}
-.layout-toggles{
-  display: none;
-}
 }
 
 
@@ -956,6 +1058,44 @@ header{
     width:300px;
     border-bottom:none;
   }
+  .profile{
+    padding-top:0;
+  }
+  #photo_details{
+
+    .film-lens {
+      margin-top:15px;
+
+      .top-separator{
+        display: none;
+      }
+      .film-icn,
+      .lens-icn{
+        background-size:18px 18px;
+        width:18px;
+        background-position: center center;
+        height:18px;
+        background-repeat: no-repeat;
+        display: inline-block;
+      }
+
+      .film-name, .lens-name{
+        height:10px;
+      }
+
+      .plus{
+        height:10px;
+      }
+
+      .lens-icn{
+        background-image:url(../images/lens_icn.png);
+      }
+
+      .film-icn{
+        background-image:url(../images/film_icn.png);
+      }
+    }
+  }
 }
 .social-btns{
   width:300px;
@@ -972,9 +1112,25 @@ header{
     padding-top:20px;
 
     > div > a{
+      img{
+        width:94px;
+        height:94px;
+      }
       width:94px;
       height:94px;
       margin:4.5px;
+
+
+      .star{
+        display: none;
+      }
+      &.curated .star{
+        width:22px;
+        height:22px;
+        background-size:22px 22px;
+        top:-2px;
+        right:-2px;
+      }
     }
   }
   .description{
@@ -1013,10 +1169,17 @@ header{
       }
     }
   }
-  #photo-details,
-  &.photo #photo-details{
+  #photo_details,
+  &.photo #photo_details{
+    .captured-by{
+      font-size:15px;
+    }
     .photo-description{
       width:280px;
+      font-size:15px;
+    }
+    .location{
+      font-size:12px;
     }
     .film-lens{
       display: block;
