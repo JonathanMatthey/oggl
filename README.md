@@ -1,8 +1,12 @@
 # Hipstamatic Oggl
 
-Demo:
+A responsive 2 page visual community site for Hipstamatic users.
 
-http://www.jonathanmatthey.com/hipsta
+"A Community Of Creative People Capturing & Curating Their Lives Through Photography."
+
+---
+
+Demo: http://www.jonathanmatthey.com/hipsta
 
 Project built using yeoman on grunt js - to make change to the code base, install yeoman
 
