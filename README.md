@@ -28,12 +28,12 @@ The dist folder / version on my website is the compiled minified static file ver
 
 - add class "curated" to line 42 of photo.html
 
-      div class="container photo curated"
+        div class="container photo curated"
 
   to make the blue text "Curated By @Bobby" appear under the photo
 - add class "curated" to the anchor elements in index.html
 
-      a href="photo.html" class="curated"
+        a href="photo.html" class="curated"
 
   to make the little stars appear on the right hand corner.
 - in index.html load the users photos into the #gallery section where there's 3 divs for each of the gallery categories, class names are self explanatory
