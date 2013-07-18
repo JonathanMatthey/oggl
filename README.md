@@ -4,13 +4,17 @@ Demo:
 
 http://www.jonathanmatthey.com/hipsta
 
-Project built using yeoman on grunt js
+Project built using yeoman on grunt js - to make change to the code base, install yeoman
+
+http://yeoman.io
+
+to run the project
 
     grunt server
 
-To make change to the code base, install yeoman
+to deploy the codebase minified and packaged up
 
-http://yeoman.io
+    grunt build --force
 
 Reason I used it is it's a quick way to prototype using html5 boilerplate, compass, scss, and a bunch of useful deploy scripts.
 
