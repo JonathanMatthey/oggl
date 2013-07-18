@@ -26,6 +26,12 @@ The dist folder / version on my website is the compiled minified static file ver
 
 ## Dev notes for hipstamatic:
 
+- add class "curated" to line 42 of photo.html
+    <div class="container photo curated">
+  to make the blue text "Curated By @Bobby" appear under the photo
+- add class "curated" to the <a href="photo"></a> elements in index.html
+    <a href="photo.html" class="curated">
+  to make the little stars appear on the right hand corner.
 - in index.html load the users photos into the #gallery section where there's 3 divs for each of the gallery categories, class names are self explanatory
 - the first 10 photos do NOT have the class "lazy" which means they will be loaded on page load.  All photos with class lazy are lazy loaded when the user scrolls and the bottom of the page is 100px away from the photo.
 - I've added an Ajax get of the photo.html page for a smoother experience, then push state the new URL using JavaScript.  That code has been commented out, feel free to bring it back if you want to use it.
